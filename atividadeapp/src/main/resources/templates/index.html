@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://ultraq.net.nz/thymeleaf/layout">
+	  
+<head>
+	<title>ClientesApp</title>
+</head>
+
+<body>
+	<h1>Lista de Clientes</h1>
+	<h3><a href="/cadastrarCliente">Cadastrar Cliente</a></h3>
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>E-mail</th>
+				<th>Telefone</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="cliente : ${clientes}">
+				<td><span th:text="${cliente.nome}"></span></td>
+				<td><span th:text="${cliente.email}"></span></td>
+				<td><span th:text="${cliente.telefone}"></span></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>

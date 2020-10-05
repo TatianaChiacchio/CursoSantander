@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://ultraq.net.nz/thymeleaf/layout">
+	  
+<head>
+	<title>ClientesApp</title>
+</head>
+
+<body>
+	<h1>Lista de Funcionarios</h1>
+	<h3><a href="/cadastraFuncionario">Cadastrar Funcionario</a></h3>
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Funcao</th>
+				<th>Salario</th>
+				<th>Senha</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="funcionario : ${funcionarios}">
+				<td><span th:text="${funcionario.nome}"></span></td>
+				<td><span th:text="${funcionario.funcao}"></span></td>
+				<td><span th:text="${funcionario.salario}"></span></td>
+				<td><span th:text="${funcionario.senha}"></span></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>
